@@ -3,6 +3,7 @@
 ## Lab 1: Information disclosure in error messages
 This lab's verbose error messages reveal that it is using a vulnerable version of a third-party framework. <br>
 To solve the lab, obtain and submit the version number of this framework. <br>
+
 ## Solution
 When we naviagte the the lab website `https://0a570011035dfb07c0de9d22003000e8.web-security-academy.net/` <br>
 we find no ways for an end user to input data and force an error. I intially turned analyzing the url. <br>
@@ -14,3 +15,23 @@ like the labs description, so we need to try feeding the product id other data t
 
 At the bottom of the error message we can see `Apache Struts 2 2.3.31`, if you do some quick research you'll find <br>
 that this is the vulnerable version that the lab is looking for, and is also our flag. 
+<br />
+<br />
+<br />
+
+## Lab 2: Information disclosure on debug page
+This lab contains a debug page that discloses sensitive information about the application. To solve the lab, obtain and submit the `SECRET_KEY` environment variable.
+
+## Solution
+Navigate to the lab site `https://0a620043046fcbe1c018e19c0028005c.web-security-academy.net/` <br>
+and you want to capture your traffic using Burp, after capturing going to the homepage in Burp. <br>
+Go to the target tab, and you'll notice a file called `phpinfo.php`, click on this file and send it to the repeater <br> within Burp. <br>
+![target](./target.PNG) <br>
+
+If we send the request in the response we can search the files code using the search bar <br>
+in the bottom of the repeater tab in Burp. If we search for `secret` this will reveal the `SECRET_KEY` value that we are looking for. <br>
+![burp-flag](./burp-flag.PNG) <br>
+
+Alternatively you could navigate to the url `https://0a620043046fcbe1c018e19c0028005c.web-security-academy.net/cgi-bin/phpinfo.php` and CTRL + F and search for `secret` on the page to find the `SECRET_KEY`. <br>
+![source-code](./source-code-flag.PNG)
+`SECRET_KEY` = `bafphsvrjifqvyp7gtpryo5zh6qj1xsk`
