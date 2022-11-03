@@ -26,12 +26,12 @@ This lab contains a debug page that discloses sensitive information about the ap
 Navigate to the lab site `https://0a620043046fcbe1c018e19c0028005c.web-security-academy.net/` <br>
 and you want to capture your traffic using Burp, after capturing going to the homepage in Burp. <br>
 Go to the target tab, and you'll notice a file called `phpinfo.php`, click on this file and send it to the repeater <br> within Burp. <br>
-![target](./target.PNG) <br>
+![target](./Lab2/target.PNG) <br>
 
 If we send the request in the response we can search the files code using the search bar <br>
 in the bottom of the repeater tab in Burp. If we search for `secret` this will reveal the `SECRET_KEY` value that we are looking for. <br>
-![burp-flag](./burp-flag.PNG) <br>
+![burp-flag](./Lab2/burp-flag.PNG) <br>
 
 Alternatively you could navigate to the url `https://0a620043046fcbe1c018e19c0028005c.web-security-academy.net/cgi-bin/phpinfo.php` and CTRL + F and search for `secret` on the page to find the `SECRET_KEY`. <br>
-![source-code](./source-code-flag.PNG)
+![source-code](./Lab2/source-code-flag.PNG)
 `SECRET_KEY` = `bafphsvrjifqvyp7gtpryo5zh6qj1xsk`
