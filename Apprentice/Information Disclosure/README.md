@@ -51,3 +51,31 @@ Replace `/robots.txt` with `/backup` revealing a productemplate file. <br>
 Click the hyperlink to the product template taking you to `/backup/ProductTemplate.java.bak`
 In this file we're looking for a database password, which is hardcoded in the `readObject` method. <br>
 ![password](./Lab3/password.PNG)
+<br />
+<br />
+<br />
+<br />
+
+## Lab 4: Authentication bypass via information disclosure
+This lab's administration interface has an authentication bypass vulnerability, but it is impractical to exploit without knowledge of a custom HTTP header used by the front-end. <br>
+To solve the lab, obtain the header name then use it to bypass the lab's authentication. Access the admin interface and delete Carlos's account. <br>
+You can log in to your own account using the following credentials: `wiener:peter`
+
+## Solution
+Login using credentials `wiener:peter` then navigate to /admin, will recieve 401 unauthorized but <br>
+in the response there is a clue "Admin interface only available to local users"
+![response-401](./Lab4/error-response.PNG) <br>
+
+In the repeater, to try and gain more information change the `GET` request to `TRACE`. <br>
+In the response there is a header `X-Custom-IP-Authorization:` which is used to determine whether or not we're a local host. <br>
+![trace-response](./Lab4/trace-response.PNG) <br>
+We can manipulate this response header within burps proxy settings, go to proxy, options, scroll down to match and replace. <br>
+Click add, Type: Request header, leave match blank, Replace: `X-Custom-IP-Authorization: 127.0.0.1` <br>
+![manipulate](./Lab4/manipulate.PNG) <br>
+
+Now navigate to home page, and you will see the admin panel now available. <br>
+![admin-panel](./Lab4/admin-panel.PNG) <br>
+
+Click delete to delete Carlos's account and you'll get a message `"Congratulations, you solved the lab!"
+![solution](./Lab4/solved.PNG)
+
