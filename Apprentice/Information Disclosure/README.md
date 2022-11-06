@@ -76,6 +76,6 @@ Click add, Type: Request header, leave match blank, Replace: `X-Custom-IP-Author
 Now navigate to home page, and you will see the admin panel now available. <br>
 ![admin-panel](./Lab4/admin-panel.PNG) <br>
 
-Click delete to delete Carlos's account and you'll get a message `"Congratulations, you solved the lab!"
+Click delete to delete Carlos's account and you'll get a message "Congratulations, you solved the lab!"
 ![solution](./Lab4/solved.PNG)
 
