@@ -18,6 +18,7 @@ that this is the vulnerable version that the lab is looking for, and is also our
 <br />
 <br />
 <br />
+<br />
 
 ## Lab 2: Information disclosure on debug page
 This lab contains a debug page that discloses sensitive information about the application. To solve the lab, obtain and submit the `SECRET_KEY` environment variable.
@@ -35,3 +36,18 @@ in the bottom of the repeater tab in Burp. If we search for `secret` this will r
 Alternatively you could navigate to the url `https://0a620043046fcbe1c018e19c0028005c.web-security-academy.net/cgi-bin/phpinfo.php` and CTRL + F and search for `secret` on the page to find the `SECRET_KEY`. <br>
 ![source-code](./Lab2/source-code-flag.PNG)
 `SECRET_KEY` = `bafphsvrjifqvyp7gtpryo5zh6qj1xsk`
+<br />
+<br />
+<br />
+<br />
+
+## Lab 3: Source code disclosure via backup files
+This lab leaks its source code via backup files in a hidden directory. To solve the lab, identify and submit the database password, which is hard-coded in the leaked source code.
+
+## Solution
+Add `/robots.txt` to the url, this will reveal a new directory backup, which is exactly what we're looking for. <br>
+Replace `/robots.txt` with `/backup` revealing a productemplate file. <br>
+![template](./Lab3/template.PNG) <br>
+Click the hyperlink to the product template taking you to `/backup/ProductTemplate.java.bak`
+In this file we're looking for a database password, which is hardcoded in the `readObject` method. <br>
+![password](./Lab3/password.PNG)
