@@ -1,6 +1,6 @@
 # Information Disclosure Apprentice All Labs
 
-## Lab 1: Information disclosure in error messages
+# Lab 1: Information disclosure in error messages
 This lab's verbose error messages reveal that it is using a vulnerable version of a third-party framework. <br>
 To solve the lab, obtain and submit the version number of this framework. <br>
 
@@ -20,7 +20,7 @@ that this is the vulnerable version that the lab is looking for, and is also our
 <br />
 <br />
 
-## Lab 2: Information disclosure on debug page
+# Lab 2: Information disclosure on debug page
 This lab contains a debug page that discloses sensitive information about the application. To solve the lab, obtain and submit the `SECRET_KEY` environment variable.
 
 ## Solution
@@ -41,7 +41,7 @@ Alternatively you could navigate to the url `https://0a620043046fcbe1c018e19c002
 <br />
 <br />
 
-## Lab 3: Source code disclosure via backup files
+# Lab 3: Source code disclosure via backup files
 This lab leaks its source code via backup files in a hidden directory. To solve the lab, identify and submit the database password, which is hard-coded in the leaked source code.
 
 ## Solution
@@ -56,7 +56,7 @@ In this file we're looking for a database password, which is hardcoded in the `r
 <br />
 <br />
 
-## Lab 4: Authentication bypass via information disclosure
+# Lab 4: Authentication bypass via information disclosure
 This lab's administration interface has an authentication bypass vulnerability, but it is impractical to exploit without knowledge of a custom HTTP header used by the front-end. <br>
 To solve the lab, obtain the header name then use it to bypass the lab's authentication. Access the admin interface and delete Carlos's account. <br>
 You can log in to your own account using the following credentials: `wiener:peter`
