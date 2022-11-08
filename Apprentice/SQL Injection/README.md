@@ -11,7 +11,7 @@ both released and unreleased.
 Want to intercept applying the product category filter within burp. Send the request to the repeater.
 ![repeater-get](./Lab1/repeater-get.PNG) <br>
 In the repeater change the category parameter to `'+OR+1=1--`, originally 12 results, after our injection,
-this reveals 20 total, 8 unreleased products. Will also see you sql injection command as the pages title.
+this reveals 20 total, 8 unreleased products. Will also see your sql injection command as the pages title.
 ![flag](./Lab1/command-solve.PNG) <br>
 
 <br />
