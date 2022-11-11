@@ -19,6 +19,22 @@ this reveals 20 total, 8 unreleased products. Will also see your sql injection c
 <br />
 <br />
 
+# Lab 2: SQL injection vulnerability allowing login bypass
+This lab contains an SQL injection vulnerability in the login function. <br>
+To solve the lab, perform an SQL injection attack that logs in to the application as the `administrator` user. <br>
+
+## Solution
+The goal is to login as the user `administrator` so the initial target is the login request. Intercepting the login request
+looks like this. <br>
+![get-request.PNG](./Lab2/get-request.PNG) <br>
+The value we want to feed the `username` parameter is `administrator'--`. <br>
+![username-value.PNG](./Lab2/username-value.PNG) <br>
+This is a very simple SQL injection attack where we are specifying our username as `administrator`, then a single quote 
+to specify the end of the string, and the `--` to comment out everything after the username to bypass the system checking our password. Send the modified request through and the login as `administrator` was successful. <br>
+![solved.PNG](./Lab2/solved.PNG) <br>
+
+
+
 
 
 
