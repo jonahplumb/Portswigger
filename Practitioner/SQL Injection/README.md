@@ -40,9 +40,9 @@ In our case it is 3 columns, this can be found using `'+UNION+SELECT+NULL,NULL,N
 
 Next step is to identify which of the 3 columns is compatable with string data. This can be tested using `'+UNION+SELECT+'test',NULL,NULL--` and moving the string value to all 3 columns, in our case it is the second column. <br>
 `'+UNION+SELECT+NULL,'test',NULL--`.
-Next step is making the database retrieve string/flag at the top the page : `mWYUoy` in my case.<br>
+Next step is making the database retrieve string/flag at the top the page : `c292S2` in my case.<br>
 Go back and replace this text, in your command, because we want the database to retrieve this string/flag. <br>
-`'+UNION+SELECT+NULL,'mWYUoy',NULL--`. <br>
+`'+UNION+SELECT+NULL,'c292S2',NULL--`. <br>
 
 ![completed](./Lab2/completed.PNG) <br>
 
